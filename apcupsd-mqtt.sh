@@ -1,12 +1,10 @@
 #!/bin/bash
-#Script to grab APC status and update Domoticz variables.
 
 #APC universal power supply data feed.
 data=`/sbin/apcaccess status`
 
 #MQTT topic.
 mqtt_topic="domoticz/out/LangwaterGH/UPS"
-
 
 #Assigns variables to the 
 ups_status=`awk '/STATUS / {print $3}' <<< "$data"`
